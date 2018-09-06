@@ -1,0 +1,26 @@
+<body>
+    <div class="container">
+        <header>
+            <h1>{{> placeholder}}</h1>
+        </header>
+        <ul>
+            {{#each tasks}}
+            {{> task}}
+
+            {{else}}
+            <div>
+                <p align="center">No Todo Available</p>
+            </div>
+            {{/each}}
+        </ul>
+    </div>
+</body>
+<template name="task">
+    <li>{{text}}</li>
+</template>
+<template name="placeholder">
+    {{{show}}}
+</template>
+<template name="Todo">
+    {{{showTodo}}}
+</template>
