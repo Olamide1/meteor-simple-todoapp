@@ -9,11 +9,10 @@
         <ul>
             {{#each tasks}}
             {{> task}}
-
-            {{else}}
-            <div>
-                <p align="center">No Todo Available</p>
-            </div>
+                {{else}}
+                    <div>
+                         <p align="center">No Todo Available</p>
+                    </div>
             {{/each}}
         </ul>
     </div>
@@ -23,7 +22,4 @@
 </template>
 <template name="placeholder">
     {{{show}}}
-</template>
-<template name="Todo">
-    {{{showTodo}}}
 </template>
