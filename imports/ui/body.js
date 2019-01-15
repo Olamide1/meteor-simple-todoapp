@@ -1,5 +1,5 @@
 import { Template } from 'meteor/templating';
-import { Tasks } from '../api/tasks';
+import { Tasks } from '../api/tasks.js';
 import './task.js';
 import './body.html';
 
@@ -22,10 +22,7 @@ Template.body.events({
          const target = event.target;
          const text = target.text.value;
 
-         Tasks.insert({
-             text, 
-             createdAt: new Date(),
-         });
+         Meteor.call('tasks.insert', text);
 
          target.text.value = '';
     }, 
