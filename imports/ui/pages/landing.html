@@ -1,5 +1,4 @@
-<body>
-    <div class="container">
+    <template name="Landing_page">
         <header>
             <h1>{{> placeholder}}</h1>
             <form class="new-task">
@@ -15,8 +14,7 @@
                     </div>
             {{/each}}
         </ul>
-    </div>
-</body>
+    </template>
 <template name="task">
     <li>{{text}}</li>
 </template>

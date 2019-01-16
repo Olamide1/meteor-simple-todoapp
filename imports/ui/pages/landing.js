@@ -1,7 +1,14 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+import { ReactiveDict } from 'meteor/reactive-var';
 import { Tasks } from '../api/tasks.js';
 import './task.js';
-import './body.html';
+import './landing.html';
+
+Template.helpers.onCreated(function bodyOnCreated() {
+    this.state = new ReactiveDict();
+    Meteor.subscribe('tasks');
+})
 
 Template.body.helpers({
     tasks() {
